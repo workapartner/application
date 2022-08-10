@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\CompanySymbolController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/get-symbol', [CompanySymbolController::class, 'symbol'])->name('symbol.get');
+Route::get('/symbol', [CompanySymbolController::class, 'index']);
+Route::get('/show', [CompanySymbolController::class, 'show']);
+Route::get('/send', [CompanySymbolController::class, 'send']);
